@@ -1,0 +1,35 @@
+CONTAINERS:
+
+sudo su: "Contraseña"
+
+Ejercicio 1:
+docker run nginx
+docker ps -a
+
+Ejercicio 2:
+docker run -d nginx
+docker ps -a
+docker stop
+docker rm "id"
+
+Ejercicio 3:
+docker run --name "Nombre" -d nginx
+docker ps -a
+
+Ejercicio 4:
+docker run --name "ContenedorConPuerto" -d -p 90:80 nginx
+docker ps -a
+
+Ejercicio 5:
+docker run nginx
+docker exec -it "id" bash
+ls
+
+Ejercicio 6:
+vim index.html >>> i >>> <h1>HOLA!<h1>
+Esc >> :wq
+sudo su "contraseña"
+docker run --name "ContenedorNuevo" -d -p 90:80 nginx
+docker ps -a
+docker cp index.html "id":/usr/share/nginx/html
+

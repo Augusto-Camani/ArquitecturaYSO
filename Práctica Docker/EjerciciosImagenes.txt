@@ -1,0 +1,15 @@
+Imágenes:
+
+Ejercicio 1:
+sudo su "contraseña"
+docker images
+docker ps -as
+
+Ejercicio 2:
+docker rmi nginx
+docker ps -a
+
+Ejercicio 3:
+docker run -d nginx
+docker ps -a
+docker rmi nginx
