@@ -1,0 +1,31 @@
+Ejercicio 1 y 2:
+
+docker run -d -p 8080:8080
+
+Ejercicio 3:
+
+Abrimos terminal:
+
+PWD
+
+cd /opt/bitnami/apache2/conf/httpd.
+
+cat index.html
+
+Ejercicio 4:
+
+cp index.html /opt/bitnami/apache2/conf/httpd.
+
+Ejercicio 5:
+
+FROM bitnami/apache
+
+WORKDIR /opt/bitnami/apache2/conf/httpd.
+
+COPY index.html .
+
+docker build -t ImagenApache:v1 .
+
+docker run -d -p 8080:8080 ImagenApache:v1
+
+docker ps -a
