@@ -1,1 +1,29 @@
- 
+EJERCICIO 1:
+
+FROM nginx
+
+WORKDIR /usr/share/nginx/html
+
+COPY index.html .
+
+docker build -t ImagenNgix:v1 .
+
+docker run -d -p 90:80 ImagenNginx:v1
+
+docker ps -a
+
+EJERCICIO 2:
+
+terminal: sudo rm index.html
+
+(contraseña)
+
+vim index.html
+
+<h1> HOLA A TODOS! </h1>
+
+docker build -t ImagenNgix:v2 .
+
+docker run -d -p 80:80 ImagenNginx:v2
+
+docker ps -a
