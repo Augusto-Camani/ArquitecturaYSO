@@ -1,0 +1,100 @@
+Ejercicio 1:
+
+vim docker-compose.yml
+
+version: "3"
+services:
+    Nginx:
+        container_name: ServidorNginx
+        build: .
+        ports:
+            - "90:80"
+        image: nginx
+        restart: always
+    BaseDeDatos:
+        container_name: BaseDeDatos
+        ports:
+            - "3306:3306"
+        image: nginx
+        restart: no
+
+docker-compose up -d 
+
+Ejercicio 2:
+
+vim index.html
+
+<h1>Funciona</h1>
+
+
+vim Dockerfile
+
+FROM nginx
+
+WORKDIR /usr/share/nginx/html
+
+COPY index.html .
+
+A)
+vim docker-compose.yml
+
+version: "3"
+services:
+    Nginx:
+        container_name: ServidorNginx
+        build: .
+        ports:
+            - "90:80"
+        image: nginx
+
+docker-compose up -d 
+
+B)
+vim docker-compose.yml
+
+version: "3"
+services:
+    Nginx:
+        container_name: ServidorNginx
+        build: 
+		context: "directorioDelDockerfile"
+		dockerfile: Dockerfile
+        ports:
+            - "90:80"
+        image: nginx
+
+
+docker-compose up -d 
+
+Ejercicio 3:
+
+vim docker-compose.yml
+
+version: "3"
+services:
+    Nginx:
+        container_name: ServidorNginx
+        ports:
+            - "90:80"
+        image: nginx
+
+vim docker-compose.yml
+
+version: "3"
+services:
+    Nginx:
+        container_name: ServidorNginx
+        ports:
+            - "90:80"
+        image: nginx
+
+docker-compose up -d 
+
+¿Cómo hago para ejecutarlo si no tiene el mismo nombre?
+
+
+
+¿Cómo hago para stopearlo?
+
+docker compose stop 
+

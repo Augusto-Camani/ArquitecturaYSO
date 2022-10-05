@@ -1,0 +1,60 @@
+Ejercicio 1:
+
+vim docker-compose.yml
+
+version: "3"
+services:
+	web-1:
+		container_name: nginx-container
+		images: nginx
+		volumes:
+			- "volumes-container:/usr/share/nginx/html"
+		ports:
+			- "90:80"
+
+volumes:
+	volumes-container:
+
+Un volumen que se cree como volumen en sí.
+Ambos casos para dos carpetas distintas
+(Hacer)
+
+
+Ejercicio 2:
+
+vim docker-compose.yml
+
+version: "3"
+services:
+	web-1:
+		container_name: nginx-container
+		images: nginx
+		networks:
+			- site1
+		ports:
+			- "90:80"
+networks:
+	site1:
+		external:
+			name: changui
+
+Definir una network y no asociarla al servicio. Que pasa en este caso?(Hacer)
+
+
+Ejercicio 3:
+
+vim docker-compose.yml
+
+version: "3"
+services:
+	web-1:
+		container_name: nginx-container
+		images: nginx
+		volumes:
+			- "volumes-container:/usr/share/nginx/html"
+		ports:
+			- "90:80"
+
+volumes:
+	volumes-container:
+
