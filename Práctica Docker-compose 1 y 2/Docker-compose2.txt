@@ -17,7 +17,20 @@ volumes:
 
 Un volumen que se cree como volumen en sí.
 Ambos casos para dos carpetas distintas
-(Hacer)
+
+vim docker-compose.yml
+
+version: "3"
+services:
+	web-1:
+		container_name: nginx-container
+		images: nginx
+		volumes:
+		ports:
+			- "90:80"
+
+volumes:
+	
 
 
 Ejercicio 2:
@@ -38,7 +51,21 @@ networks:
 		external:
 			name: changui
 
-Definir una network y no asociarla al servicio. Que pasa en este caso?(Hacer)
+Definir una network y no asociarla al servicio. Que pasa en este caso?
+
+vim docker-compose.yml
+
+version: "3"
+services:
+	web-1:
+		container_name: nginx-container
+		images: nginx
+		networks:
+
+		ports:
+			- "90:80"
+networks:
+
 
 
 Ejercicio 3:

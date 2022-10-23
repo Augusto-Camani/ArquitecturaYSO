@@ -92,9 +92,9 @@ docker-compose up -d
 
 ¿Cómo hago para ejecutarlo si no tiene el mismo nombre?
 
-
+docker-compose -f "Nombre" up -d
 
 ¿Cómo hago para stopearlo?
 
-docker compose stop 
+docker-compose -f "Nombre" down
 
